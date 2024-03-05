@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+</head>
+
+<body>
+    <h3>Weather</h3>
+    <table>
+        <thead>
+            <th>Time</th>
+            <th>Temperature</th>
+            <th>Details</th>
+        </thead>
+        {% for data in weather %}
+        <tbody>
+            <td>{{data.datetime}}</td>
+            <td>{{data.temperature}}</td>
+            <td>{{data.detail}}</td>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
