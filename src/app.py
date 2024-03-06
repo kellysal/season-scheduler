@@ -23,6 +23,16 @@ def index():
     weather = Weather.query.all()
     return render_template('index.html', weather=weather)
 
+#average temperature
+class Calculator:
+    def multiply(self, a, b):
+        return a * b
+    
+    #mock object
+    def get_temperature(self):
+        response = requests.get("https://api.weather.gov/gridpoints/OKX/47,69/forecast")
+        return response.json()["properties"]["periods"][0]["temperature"]
+
 #helper function to get temperature using API (api.weather.gov)
 def get_temperature():
     response = requests.get("https://api.weather.gov/gridpoints/OKX/47,69/forecast")
