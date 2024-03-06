@@ -14,6 +14,18 @@ This product is unique because it allows users the flexibility to book a snow pl
 
 # App Overview
 
+### System Requirements
+
+Python was used to develop this web app
+
+A Python3 environment is required with all dependencies from requirement.txt
+
+Postgres Database
+
+### Design Decisions
+
+Developed this web app using Python and Flask because of it's lightweight flexibility. Decided on a SQL database because of scalability and simple integration on Heroku. CI/CD created in Heroku because of the streamlined integration.
+
 ### Architecture/Whiteboard
 
 USER [interacts with web app]
@@ -40,9 +52,13 @@ DATA COLLECTOR (APP) → [go out & collect weather data from openweatherapi + br
 
 ### Continuous Delivery
 
+This app is integrated with GitHub to easily deploy with Heroku.
+
 ![Screenshot](./src/img/auto-deploy.png)
 
 ### Monitoring & Performance Metrics
+
+This app is using Heroku monitoring to monitor the app's health (including: events, memory, response and throughput)
 
 ![Screenshot](./src/img/metrics-events-memory.png)
 
@@ -59,11 +75,19 @@ The season scheduler web app uses Python requests to collect weather data. The c
 
 ![Screenshot](./src/img/db.png)
 
+### Data Analyzer
+
+The season scheduler analyzes the collected data (temperature and details from weather api) and decides if a snow plow is needed.
+
+### Unit Tests
+
+Utilizing unit and integration tests running in Heroku
+
 ### Frontend
 
-Python Flask
+Using a Python Flask stack due to the lightweight flexibility
 
-# Production
+# Production Environment
 
 Visit Production App Hosted on Heroku [here >>](https://season-scheduler-d4b180d45e2c.herokuapp.com/)
 
